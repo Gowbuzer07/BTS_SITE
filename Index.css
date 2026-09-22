@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.tete{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    font-family: cursive;
+    font-size: 20px;
+    background: linear-gradient(90deg, #0a0a0a 0%, #3a3a3a 40%, #8b0000 75%, #b22222 100%);
+}
+
+.tete nav{
+    width: 100%;
+}
+
+.tete ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 50px;
+    gap: 70px;
+}
+
+.tete li{
+    color: white;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.tete li:hover{
+    color: #d4222e;
+}
+
+
+.moi{
+    margin-left: auto;
+}
+
+.intro-text{
+    text-align: center;
+    padding: 40px 20px 10px;
+    font-family: cursive;
+}
+
+.intro-text h1{
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.intro-text p{
+    font-size: 16px;
+}
+
+.voitures-section{
+    padding: 50px 40px;
+}
+
+.voiture-bloc{
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(140, 0, 30, 0.55);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.voiture-bloc:hover{
+    transform: scale(1.10) translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.voiture-bloc figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+    color: white;
+    font-family: cursive;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.citation-section{
+    text-align: center;
+    padding: 100px 30px;
+}
+
+.citation-section p{
+    color: black;
+    font-family: cursive;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
