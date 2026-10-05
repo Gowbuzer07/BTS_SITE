@@ -4,10 +4,14 @@
     box-sizing:border-box;
 }
 
+html, body{
+    overflow-x: hidden;
+}
+
 .tete{
-    display: flex;
-    align-items: center;
-    height: 100px;
+    display: block;
+    height: auto;
+    min-height: 100px;
     font-family: cursive;
     font-size: 20px;
     background: linear-gradient(90deg, #0a0a0a 0%, #3a3a3a 40%, #8b0000 75%, #b22222 100%);
@@ -15,52 +19,61 @@
 
 .tete nav{
     width: 100%;
-}
-
-.tete ul{
-    display: flex;
+    min-height: 100px;
+    padding: 0 30px;
     align-items: center;
-    list-style: none;
-    padding: 50px;
-    gap: 70px;
 }
 
-.tete li{
+.tete .navbar-nav .nav-link{
     color: white;
     transition: color 0.3s ease;
-    cursor: pointer;
 }
 
-.tete li:hover{
+.tete .navbar-nav .nav-link:hover{
     color: #d4222e;
 }
 
-
 .moi{
-    margin-left: auto;
+    color: white;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 }
 
-.intro-text{
+@media (min-width: 768px){
+    .tete .navbar-nav{
+        align-items: center;
+        gap: 70px;
+    }
+    .moi{
+        margin-left: auto;
+    }
+}
+
+.tete .navbar-nav{
+    padding: 10px 0 20px;
+    text-align: center;
+}
+
+.text{
     text-align: center;
     padding: 40px 20px 10px;
     font-family: cursive;
 }
 
-.intro-text h1{
+.text h1{
     font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-.intro-text p{
+.text p{
     font-size: 16px;
 }
 
-.voitures-section{
+.boite{
     padding: 50px 40px;
 }
 
-.voiture-bloc{
+.voiture{
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(140, 0, 30, 0.55);
@@ -68,13 +81,13 @@
     position: relative;
 }
 
-.voiture-bloc:hover{
+.voiture:hover{
     transform: scale(1.10) translateY(-10px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
     z-index: 10;
 }
 
-.voiture-bloc figcaption{
+.voiture figcaption{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -89,16 +102,188 @@
     text-transform: uppercase;
 }
 
-.citation-section{
+.phrase{
     text-align: center;
     padding: 100px 30px;
 }
 
-.citation-section p{
+.phrase p{
     color: black;
     font-family: cursive;
     font-size: 36px;
     letter-spacing: 3px;
     margin: 0 auto;
     line-height: 1.4;
+}
+
+.footer{
+    background-color:white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px 40px;
+    margin-bottom: 20px;
+}
+
+.footer-icons img{
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img{
+    transform: scale(1.5);
+}
+
+.titre h1{
+    text-align: center;
+    padding: 40px;
+    font-family: cursive;
+    letter-spacing: 2px;
+    
+}
+
+.titre p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.histoire-container{
+    padding: 80px 20px 80px;
+}
+
+.histoire-bloc{
+    margin-bottom: 80px;
+}
+
+.histoire-img{
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.histoire-bloc h2{
+    font-family: cursive;
+    letter-spacing: 2px;
+    color: #b22222;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.histoire-bloc p{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.carrousel-section{
+    padding: 0 20px 80px;
+}
+
+.carrousel-corvette{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carrousel-corvette .carousel-inner{
+    border-radius: 20px;
+    background: #000;
+    box-shadow: 0 10px 25px rgba(140, 0, 30, 0.55);
+}
+
+.carrousel-corvette .carousel-item img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.carrousel-corvette .carousel-caption{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px 20px 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+    font-family: cursive;
+    font-size: clamp(14px, 3vw, 20px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.carrousel-corvette .carousel-control-prev,
+.carrousel-corvette .carousel-control-next{
+    top: 50%;
+    bottom: auto;
+    width: 45px;
+    height: 45px;
+    margin: 0 10px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: rgba(139, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.carrousel-corvette .carousel-indicators{
+    position: static;
+    margin: 20px 0 0;
+}
+
+.carrousel-corvette .carousel-indicators [data-bs-target]{
+    background-color: #8b0000;
+}
+
+
+.tete .navbar-nav .nav-link.show{
+    color: #d4222e;
+}
+
+.tete .dropdown-menu{
+    --bs-dropdown-border-color: #8b0000;
+    --bs-dropdown-border-radius: 15px;
+    --bs-dropdown-padding-y: 8px;
+    --bs-dropdown-min-width: 200px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #2a2a2a 100%);
+    margin-top: 12px;
+    overflow: hidden;
+    text-align: left;
+    font-family: cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 25px rgba(140, 0, 30, 0.55);
+}
+
+.tete .dropdown-item{
+    color: white;
+    padding: 10px 24px;
+    transition: padding-left 0.3s ease, background 0.3s ease;
+}
+
+.tete .dropdown-item:hover,
+.tete .dropdown-item:focus,
+.tete .dropdown-item:active{
+    color: white;
+    padding-left: 32px;
+    background: linear-gradient(90deg, #8b0000 0%, #b22222 100%);
+}
+
+@media (max-width: 767.98px){
+    .tete .dropdown-menu{
+        margin-top: 0;
+        text-align: center;
+        border: none;
+        box-shadow: none;
+    }
+    .tete .dropdown-item:hover,
+    .tete .dropdown-item:focus,
+    .tete .dropdown-item:active{
+        padding-left: 24px;
+    }
 }
